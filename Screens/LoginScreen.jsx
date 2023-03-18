@@ -24,7 +24,7 @@ const InitialState = {
 
 SplashScreen.preventAutoHideAsync();
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [isKeyboardShown, setIsKeyboardShown] = useState(false);
   const [state, setState] = useState(InitialState);
   const [dimensions, setDimensions] = useState(
@@ -109,7 +109,10 @@ const LoginScreen = () => {
                 >
                   <Text style={styles.buttonTitle}>Log in</Text>
                 </TouchableOpacity>
-                <Text style={styles.signInText}>
+                <Text
+                  style={styles.signInText}
+                  onPress={() => navigation.navigate("Registration")}
+                >
                   Don't have an account? Sign up
                 </Text>
               </View>
@@ -184,6 +187,5 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textAlign: "center",
     color: "#1B4371",
-    marginBottom: 111,
   },
 });

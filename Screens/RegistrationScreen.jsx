@@ -25,7 +25,7 @@ const InitialState = {
 
 SplashScreen.preventAutoHideAsync();
 
-const  RegistrationScreen = () => {
+const RegistrationScreen = ({ navigation }) => {
   const [isKeyboardShown, setIsKeyboardShown] = useState(false);
   const [state, setState] = useState(InitialState);
   const [dimensions, setDimensions] = useState(
@@ -123,8 +123,11 @@ const  RegistrationScreen = () => {
                 >
                   <Text style={styles.buttonTitle}>Sign up</Text>
                 </TouchableOpacity>
-                <Text style={styles.signInText}>
-                  Already have an account? Sign in
+                <Text
+                  style={styles.signInText}
+                  onPress={() => navigation.navigate("Login")}
+                >
+                  Already have an account? Log in
                 </Text>
               </View>
             </KeyboardAvoidingView>
@@ -133,7 +136,7 @@ const  RegistrationScreen = () => {
       </View>
     </TouchableWithoutFeedback>
   );
-}
+};
 export default RegistrationScreen;
 
 const styles = StyleSheet.create({
