@@ -3,6 +3,7 @@ import {
   StyleSheet,
   View,
   ImageBackground,
+  Image,
   TextInput,
   Text,
   TouchableOpacity,
@@ -69,6 +70,13 @@ const  RegistrationScreen = () => {
           source={require("../assets/img/background-img.png")}
           style={styles.image}
         >
+          <View style={styles.imageWrapper}>
+            <Image source={require("../assets/img/photoSpace.png")} />
+            <Image
+              style={styles.addIcon}
+              source={require("../assets/img/add.png")}
+            />
+          </View>
           <View style={styles.form}>
             <Text style={styles.register}>Registration</Text>
             <KeyboardAvoidingView
@@ -139,6 +147,25 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
+
+  imageWrapper: {
+    left: "-1%",
+    top: "10%",
+    zIndex: 999,
+    width: 120,
+    height: 120,
+    backgroundColor: "#F6F6F6",
+    borderRadius: 16,
+  },
+
+  addIcon: {
+    position: "absolute",
+    left: "90%",
+    top: "65%",
+    width: 25,
+    height: 25,
+  },
+
   input: {
     height: 50,
     padding: 16,
